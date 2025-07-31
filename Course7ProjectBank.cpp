@@ -618,6 +618,8 @@ void totalBalance(vector <stClient>& vClient)
 		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].accountBalance;
 	}
 	cout << "\n_________________________________________________________________________________\n";
+
+	//i used fixed from iomanip library to not print the double in scintific notation
 	cout << "\n\t\t\t\t Total Balances = " << fixed << total;
 
 	cout << "\n\nPress any key to go back to transactions menu...";
