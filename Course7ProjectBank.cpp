@@ -35,7 +35,7 @@ enum enTransactionMenu
 	mainMenu = 4
 };
 
-//decalring some functions
+//decalring some functions.
 void startProgram();
 void selectTransactionMenu(enTransactionMenu choice, vector<stClient>& vClient);
 void depositScreen(vector <stClient>& vClient);
