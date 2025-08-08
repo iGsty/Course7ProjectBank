@@ -60,7 +60,7 @@ enMainMenu readUserChoice()
 		cin >> ws >> num;
 		if (num < 1 || num > 7)
 		{
-			cout << "\nSorry wrong input please enter a number between 1 to 6: ";
+			cout << "\nSorry wrong input please enter a number between 1 to 7: ";
 		}
 
 	} while (num < 1 || num > 7);
@@ -220,7 +220,7 @@ void markForDeletion(vector <stClient>& vClient)
 	cout << "\n___________________________________________________________________________________________\n";
 	for (short i = 0; i < clientNumber; i++)
 	{
-		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << vClient[i].accountBalance;
+		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << fixed << vClient[i].accountBalance;
 	}
 	cout << "\n___________________________________________________________________________________________\n";
 
@@ -245,7 +245,7 @@ void markForDeletion(vector <stClient>& vClient)
 	cout << left << setw(19) << "\nPin Code" << right << ": " << client.pinCode;
 	cout << left << setw(19) << "\nClient Name" << right << ": " << client.name;
 	cout << left << setw(19) << "\nPhone" << right << ": " << client.phone;
-	cout << left << setw(19) << "\nAccount Balance" << right << ": " << client.accountBalance << endl;
+	cout << left << setw(19) << "\nAccount Balance" << right << ": " << fixed << client.accountBalance << endl;
 	cout << "\n-----------------------------------\n";
 
 
@@ -291,7 +291,7 @@ void findClientScreen(vector <stClient>& vClient)
 	cout << "\n___________________________________________________________________________________________\n";
 	for (short i = 0; i < clientNumber; i++)
 	{
-		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << vClient[i].accountBalance;
+		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << fixed << vClient[i].accountBalance;
 	}
 	cout << "\n___________________________________________________________________________________________\n";
 
@@ -314,7 +314,7 @@ void findClientScreen(vector <stClient>& vClient)
 	cout << left << setw(19) << "\nPin Code" << right << ": " << client.pinCode;
 	cout << left << setw(19) << "\nClient Name" << right << ": " << client.name;
 	cout << left << setw(19) << "\nPhone" << right << ": " << client.phone;
-	cout << left << setw(19) << "\nAccount Balance" << right << ": " << client.accountBalance << endl;
+	cout << left << setw(19) << "\nAccount Balance" << right << ": " << fixed << client.accountBalance << endl;
 	cout << "\n-----------------------------------\n";
 	cout << "\n\nPress any key to go back to main menu...";
 	system("pause>0");
@@ -335,7 +335,7 @@ void updateClientFunc(vector <stClient>& vClient)
 	cout << "\n___________________________________________________________________________________________\n";
 	for (short i = 0; i < clientNumber; i++)
 	{
-		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << vClient[i].accountBalance;
+		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << fixed << vClient[i].accountBalance;
 	}
 	cout << "\n___________________________________________________________________________________________\n";
 
@@ -360,7 +360,7 @@ void updateClientFunc(vector <stClient>& vClient)
 	cout << left << setw(19) << "\nPin Code" << right << ": " << client.pinCode;
 	cout << left << setw(19) << "\nClient Name" << right << ": " << client.name;
 	cout << left << setw(19) << "\nPhone" << right << ": " << client.phone;
-	cout << left << setw(19) << "\nAccount Balance" << right << ": " << client.accountBalance << endl;
+	cout << left << setw(19) << "\nAccount Balance" << right << ": " << fixed << client.accountBalance << endl;
 	cout << "\n-----------------------------------\n";
 
 	char updateAcc = 'n';
@@ -491,7 +491,7 @@ void depositScreen(vector <stClient>& vClient)
 	cout << left << setw(19) << "\nPin Code" << right << ": " << client.pinCode;
 	cout << left << setw(19) << "\nClient Name" << right << ": " << client.name;
 	cout << left << setw(19) << "\nPhone" << right << ": " << client.phone;
-	cout << left << setw(19) << "\nAccount Balance" << right << ": " << client.accountBalance << endl;
+	cout << left << setw(19) << "\nAccount Balance" << right << ": " << fixed << client.accountBalance << endl;
 	cout << "\n-----------------------------------\n";
 
 	cout << "\nPlease enter deposit amount: ";
@@ -556,7 +556,7 @@ void withdrawScreen(vector <stClient>& vClient)
 	cout << left << setw(19) << "\nPin Code" << right << ": " << client.pinCode;
 	cout << left << setw(19) << "\nClient Name" << right << ": " << client.name;
 	cout << left << setw(19) << "\nPhone" << right << ": " << client.phone;
-	cout << left << setw(19) << "\nAccount Balance" << right << ": " << client.accountBalance << endl;
+	cout << left << setw(19) << "\nAccount Balance" << right << ": " << fixed << client.accountBalance << endl;
 	cout << "\n-----------------------------------\n";
 
 	cout << "\nPlease enter withdraw amount: ";
@@ -565,7 +565,7 @@ void withdrawScreen(vector <stClient>& vClient)
 	{
 		cin >> ws >> withdrawAmount;
 
-		if (withdrawAmount > client.accountBalance);
+		if (withdrawAmount > client.accountBalance)
 		cout << "\nYou dont have that much money!!, Please enter another amount: ";
 
 	} while (withdrawAmount > client.accountBalance);
@@ -615,7 +615,7 @@ void totalBalance(vector <stClient>& vClient)
 	cout << "\n_________________________________________________________________________________\n";
 	for (short i = 0; i < clientNumber; i++)
 	{
-		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].accountBalance;
+		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << left << setw(20) << vClient[i].name << "\t\t| " << fixed << vClient[i].accountBalance;
 	}
 	cout << "\n_________________________________________________________________________________\n";
 
@@ -655,7 +655,7 @@ void printClientList(const vector <stClient>& vClient)
 	cout << "\n___________________________________________________________________________________________\n";
 	for (short i = 0; i < clientNumber; i++)
 	{
-		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << vClient[i].accountBalance;
+		cout << "\n| " << vClient[i].accountNumber << "\t\t | " << vClient[i].pinCode << "\t\t| " << left << setw(20) << vClient[i].name << "\t\t| " << vClient[i].phone << "\t| " << fixed << vClient[i].accountBalance;
 	}
 	cout << "\n___________________________________________________________________________________________\n";
 	cout << "\n\nPress any key to go back to main menu...";
